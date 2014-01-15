@@ -115,8 +115,8 @@ $token = $response->access_token;
 $user = $response->user;
 ```
 
-The data source doesn't store the token, so you'll need to save it (in the database or session or wherever) and when you want to authorize your client with Instagram you call the method with the token and _true_ as the other parameter, which will authorize the API.
+The data source doesn't store the token, so you'll need to save it (in the database or session or wherever) and when you want to authenticate your client with Instagram you call the method with the token and _true_ as the other parameter, which will authenticate the API.
 
 ```php
-$instagram->authorize($token, true);
+$instagram->authenticate($token, true);
 ```

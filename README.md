@@ -10,12 +10,12 @@ To use the Instagram API you need to have a client setup. See [the client manage
 
 Clone the project to an appropriately named plugin folder:
 ```
-git clone git://github.com/nodesagency/cake-instagram-datasource.git app/Plugin/InstagramDatasource
+git clone git@github.com:nodesagency/cake-instagram-datasource.git app/Plugin/InstagramDatasource
 ```
 
 Or add it as a submodule to your pre-existing git repository.
 ```
-git submodule add git://github.com/nodesagency/cake-instagram-datasource.git app/Plugin/InstagramDatasource
+git submodule add git@github.com:nodesagency/cake-instagram-datasource.git app/Plugin/InstagramDatasource
 ```
 
 ### 2. Add the plugin to your project

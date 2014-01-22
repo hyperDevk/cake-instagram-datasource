@@ -46,6 +46,8 @@ class DATABASE_CONFIG {
 Alternatively, it can be added to the ```ConnectionManager``` manually.
 
 ```php
+App::uses('ConnectionManager', 'Model');
+
 ConnectionManager::create('instagram', array(
 	'datasource'    => 'InstagramDatasource.InstagramSource',
 	'client_id'     => '', // from your Instagram client

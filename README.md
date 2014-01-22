@@ -78,6 +78,7 @@ $entries = $this->Media->find('first', array(
 ));
 
 // Search for media items by a specific tag and retrieve 100 entries
+$tag = 'hashtag'; // leave out the #
 $entries = $this->Media->find('all', array(
 	'conditions' => array('tag' => $tag),
 	'limit' => 100

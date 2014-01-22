@@ -19,7 +19,7 @@ class InstagramSource extends DataSource {
  * Authenticate the Instagram connection with a user.
  *
  * @param string  $code     (optional) Code to use when authenticating
- * @oaram boolean $complete (optional) Whether the authentication is complete
+ * @param boolean $complete (optional) Whether the authentication is complete
  * @return mixed
  */
 	public function authenticate($code = null, $complete = false) {

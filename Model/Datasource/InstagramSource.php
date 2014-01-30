@@ -326,7 +326,37 @@ class InstagramSource extends DataSource {
 		}
 		return $temp;
 	}
+
+	/**
+	 * This function authenticates the user and returns the json  object
+	 *
+	 * @param clien_id {string} - take it from application settings
+	 * @param clien_secret {string} - take it from application settings
+	 * @param redirect_uri {string} - this string is set up in the app settings as well.
+	 * The redirect url taht you will use has to mach each character.
+	 * If you pass a GET parameters you have to urlencode and decode
+	 * @author ludy@nodes.dk
+	 * @return response {json}
+	 */
+	public static function curl($client_id, $client_secret, $redirect_uri, $code) {
+		$curl = curl_init('https://api.instagram.com/oauth/access_token');
+		$params = array(
+			'client_id'     => $client_id,
+			'client_secret' => $client_secret,
+			'grant_type'    => 'authorization_code',
+			'redirect_uri'  => $redirect_uri,
+			'code'          => $code
+		);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_POST, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
+
+		$response = json_decode(curl_exec($curl));
+		return $response;
+	}
+
 }
+
 
 /**
  * Exception wrapper to differentiate it from other exceptions.
